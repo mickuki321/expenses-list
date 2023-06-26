@@ -45,7 +45,9 @@
     // accessing index must always check for undefined
     "noUnusedLocals": true,
     // Report errors on unused local variables.
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules/**/*"
