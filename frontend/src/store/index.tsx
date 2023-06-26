@@ -1,10 +1,10 @@
 import {createContext, useContext} from 'react';
 import {ExpensesStore} from './expenses-store';
 
-export interface StoreI {
+export interface IStore {
 	expenses: ExpensesStore;
 }
-export const store: StoreI = {
+export const store: IStore = {
 	expenses: new ExpensesStore(),
 };
 export const StoreContext = createContext(store);

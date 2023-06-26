@@ -1,7 +1,8 @@
+import {Expenses} from './components/views';
 
 const App = (): JSX.Element => (
 	<div className='App'>
-		test
+		<Expenses/>
 	</div>
 );
 
