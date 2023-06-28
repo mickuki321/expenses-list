@@ -1,11 +1,12 @@
 import {Table, Tbody, Td, Th, Thead, Tr} from '@chakra-ui/react';
+import {observer} from 'mobx-react-lite';
 
 interface IProps <TData> {
 	dataList: TData[];
 	labelsHeader: string[];
 }
 
-export const GenericTable = <TData extends Record<string, string | number | JSX.Element> >({dataList, labelsHeader}: IProps<TData>) => (
+export const GenericTable = observer(<TData extends Record<string, any>>({dataList, labelsHeader}: IProps<TData>) => (
 	<Table>
 		<Thead>
 			<Tr>
@@ -24,4 +25,4 @@ export const GenericTable = <TData extends Record<string, string | number | JSX.
 			))}
 		</Tbody>
 	</Table>
-);
+));

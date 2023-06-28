@@ -1,0 +1,9 @@
+div:hover + .labelGreen,
+input:focus + .labelGreen,
+input:hover + .labelGreen {
+    color: var(--chakra-colors-green-500);
+}
+
+.hoverGreen > div > div:hover {
+    border-color: #6bbfb2;
+}

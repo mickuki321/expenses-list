@@ -1,27 +1,18 @@
-import {Table, Tbody, Td, Th, Thead, Tr} from '@chakra-ui/react';
+import {observer} from 'mobx-react-lite';
 
-interface IProps <TData> {
-	dataList: TData[];
-	labelsHeader: string[];
-}
+import {type IExpenses} from '../../../interfaces/expenses';
+import {BoxWrapper} from '../../../components/atoms/wrappers/box-wrapper';
+import {useStore} from '../../../store';
+import {GenericTable} from '../../../components/organisms/generic-table';
 
-export const ExpensesList = <TData extends Record<string, string | number | JSX.Element> >({dataList, labelsHeader}: IProps<TData>) => (
-	<Table>
-		<Thead>
-			<Tr>
-				{labelsHeader.map((label, i) => (
-					<Th key={i}>{label}</Th>
-				))}
-			</Tr>
-		</Thead>
-		<Tbody>
-			{dataList.map((record, i) => (
-				<Tr key={i}>
-					{Object.values(record).map((data, i) =>
-						<Td key={i}>{data}</Td>,
-					)}
-				</Tr>
-			))}
-		</Tbody>
-	</Table>
-);
+export const ExpensesList = observer(() => {
+	const {expenses: {list}} = useStore();
+	const labelsHeader = ['Title', 'Amount(PLN)', 'Amount(EUR)', 'Options'];
+
+	return (
+		<BoxWrapper>
+			xs
+			<GenericTable<IExpenses> dataList={list} labelsHeader={labelsHeader}/>
+		</BoxWrapper>
+	);
+});

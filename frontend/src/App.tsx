@@ -1,9 +1,10 @@
 import {Expenses} from './components/views';
+import {BodyWrapper} from './components/atoms/wrappers/body-wrapper';
 
 const App = (): JSX.Element => (
-	<div className='App'>
+	<BodyWrapper>
 		<Expenses/>
-	</div>
+	</BodyWrapper>
 );
 
 export default App;
