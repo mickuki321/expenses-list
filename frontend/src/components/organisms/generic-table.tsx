@@ -1,14 +1,16 @@
 import {Table, Tbody, Td, Th, Thead, Tr} from '@chakra-ui/react';
 import {observer} from 'mobx-react-lite';
 
-interface IProps <TData, TGenericColumns> {
+type IGenericColumns = Record<string, string | number | JSX.Element>;
+
+interface IProps <TData> {
 	dataList: TData[];
 	labelsHeader: string[];
-	nameVariableInColumns: Array<keyof TData | keyof TGenericColumns>;
-	genericColumns: (record: TData) => TGenericColumns;
+	nameVariableInColumns: Array<keyof TData | keyof IGenericColumns>;
+	genericColumns: (record: TData) => IGenericColumns;
 }
 
-export const GenericTable = observer(<TData extends Record<'id', number | string> & Record<keyof TData, number | string | JSX.Element>, TGenericColumns>({nameVariableInColumns, dataList, labelsHeader, genericColumns}: IProps<TData, TGenericColumns>) => (
+export const GenericTable = observer(<TData extends Record<'id', number | string> & Record<keyof TData, number | string | JSX.Element>>({nameVariableInColumns, dataList, labelsHeader, genericColumns}: IProps<TData>) => (
 	<Table>
 		<Thead>
 			<Tr>

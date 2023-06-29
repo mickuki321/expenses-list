@@ -6,7 +6,6 @@ export interface PropsInputWrapper extends BoxProps {
 	children: JSX.Element;
 	label: string;
 	error?: FieldError;
-	arg?: any;
 	isRequired?: boolean;
 }
 export const InputWrapper = ({

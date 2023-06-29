@@ -25,7 +25,6 @@ export const ExpensesList = observer(() => {
 		setEditExpense(undefined);
 	};
 
-	console.log(actualRateEuro);
 	const genericColumns = (data: IExpense) => ({
 		amountEUR: parseFloat(data.amount) * actualRateEuro,
 		options:
@@ -42,7 +41,7 @@ export const ExpensesList = observer(() => {
 	return (
 		<BoxWrapper w='100%'>
 			<ExpenseEditModal closeEditHeader={closeEditHeader} defaultValue={editExpense}/>
-			<GenericTable<IExpense, any> dataList={list} nameVariableInColumns={['title', 'amount', 'amountEUR', 'options']} labelsHeader={labelsHeader} genericColumns={genericColumns}/>
+			<GenericTable<IExpense> dataList={list} nameVariableInColumns={['title', 'amount', 'amountEUR', 'options']} labelsHeader={labelsHeader} genericColumns={genericColumns}/>
 		</BoxWrapper>
 	);
 });
