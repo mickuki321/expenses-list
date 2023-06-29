@@ -1,5 +1,5 @@
 import {useForm} from 'react-hook-form';
-import {Button} from '@chakra-ui/react';
+import {Button, Text} from '@chakra-ui/react';
 import {observer} from 'mobx-react-lite';
 
 import {useStore} from '../../../store';
@@ -25,10 +25,10 @@ export const AddExpensesSidebar = observer(() => {
 
 	return (
 		<BoxWrapper h='min-content'>
-			Create new expense
+			<Text color='gray.600' fontWeight='700' fontSize='18px' mb={4}>Create new expense</Text>
 			<form onSubmit={expensesForm.handleSubmit(handleSubmit)}>
 				<ExpensesForm form={expensesForm}/>
-				<Button mt={4} w='100%' type='submit' variant='apply'>
+				<Button mt={4} w='100%' type='submit' variant='apply' >
 					save
 				</Button>
 			</form>

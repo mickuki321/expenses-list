@@ -35,7 +35,7 @@ export const SettingModal = ({isOpen, onClose}: Props) => {
 			<form onSubmit={form.handleSubmit(handleSubmit)}>
 				<ModalOverlay />
 				<ModalContent >
-					<ModalHeader w='100%' p={8}>Setting</ModalHeader>
+					<ModalHeader w='100%' px={8} pt={8} color='gray.600' fontWeight='700' fontSize='18px' >Setting</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody py={0} px={8}>
 						<DefaultInput<IRates> label={'Rate euro'}name={'rateEuro'} form={form} formOption={rateInputFormOption(lengthRateEuro)}/>

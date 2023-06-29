@@ -15,7 +15,7 @@ export const InputWrapper = ({
 	isRequired,
 	...arg
 }: PropsInputWrapper): JSX.Element => (
-	<Box display='flex' justifyContent='flex-end' flexDirection='column-reverse' {...arg}>
+	<Box display='flex' justifyContent='flex-end' flexDirection='column-reverse' {...arg} color='gray.500' fontSize={14} mt={4}>
 		{error && (
 			<Text color='red.500' >
 				{error?.message}

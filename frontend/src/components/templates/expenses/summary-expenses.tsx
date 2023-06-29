@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react-lite';
 import {Text} from '@chakra-ui/react';
 
-import {BoxWrapper} from '../../atoms';
+import {BoxWrapper, RecordWrapper} from '../../atoms';
 import {useStore} from '../../../store';
 
 export const SummaryExpenses = observer(() => {
@@ -10,15 +10,15 @@ export const SummaryExpenses = observer(() => {
 	const sumAmountEUR = actualRateEuro * sumAmountPLN;
 	return (
 		<BoxWrapper w='100%'>
-			<Text>
+			<Text color='gray.600' fontWeight='700' fontSize='18px'>
 			Summary
 			</Text>
-			<Text>
-				Sum PLN: {sumAmountPLN}
-			</Text>
-			<Text>
-				Sum EUR: {sumAmountEUR}
-			</Text>
+			<RecordWrapper label='Sum PLN: '>
+				{sumAmountPLN}
+			</RecordWrapper>
+			<RecordWrapper label='Sum EUR: '>
+				{sumAmountEUR}
+			</RecordWrapper>
 		</BoxWrapper>
 	);
 });

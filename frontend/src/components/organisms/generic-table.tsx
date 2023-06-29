@@ -11,7 +11,7 @@ interface IProps <TData> {
 }
 
 export const GenericTable = observer(<TData extends Record<'id', number | string> & Record<keyof TData, number | string | JSX.Element>>({nameVariableInColumns, dataList, labelsHeader, genericColumns}: IProps<TData>) => (
-	<Table>
+	<Table variant='defaultVariantTable'>
 		<Thead>
 			<Tr>
 				{labelsHeader.map((label, i) => (
