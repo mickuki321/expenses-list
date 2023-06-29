@@ -11,7 +11,7 @@ import {
 import {useForm} from 'react-hook-form';
 
 import {DefaultInput} from '../../atoms';
-import {moneyInputFormOption} from '../../../constans/inputs';
+import {rateInputFormOption} from '../../../constans/inputs';
 import {type IRates} from '../../../interfaces/rates';
 import {useStore} from '../../../store';
 
@@ -38,7 +38,7 @@ export const SettingModal = ({isOpen, onClose}: Props) => {
 					<ModalHeader w='100%' p={8}>Setting</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody py={0} px={8}>
-						<DefaultInput<IRates> label={'Rate euro'}name={'rateEuro'} form={form} formOption={moneyInputFormOption(lengthRateEuro)}/>
+						<DefaultInput<IRates> label={'Rate euro'}name={'rateEuro'} form={form} formOption={rateInputFormOption(lengthRateEuro)}/>
 					</ModalBody>
 
 					<ModalFooter w='100%' p={8}>

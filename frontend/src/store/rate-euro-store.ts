@@ -1,7 +1,7 @@
 import {action, observable, makeObservable} from 'mobx';
 export class RateEuroStore {
 	@observable
-		actualRateEuro = 4;
+		actualRateEuro = 4.382;
 
 	constructor() {
 		makeObservable(this);

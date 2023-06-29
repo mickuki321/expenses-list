@@ -10,7 +10,7 @@ export const titleInputFormOption = (length: number): RegisterOptions => ({
 		message: `The minimum length to 5 characters  (5/${length})`},
 });
 
-export const moneyInputFormOption = (length: number): RegisterOptions => (
+const numberInputFormOption = (length: number) => (
 	{
 		required: 'The field is required',
 		min: {
@@ -22,5 +22,22 @@ export const moneyInputFormOption = (length: number): RegisterOptions => (
 		maxLength: {
 			value: 30,
 			message: `The maximum length is 30 characters (${length}/30)`},
+	}
+);
+export const moneyInputFormOption = (length: number): RegisterOptions => (
+	{
+		...numberInputFormOption(length),
+		pattern: {
+			value: /^\$?\d+(\.\d{1,2})?$/,
+			message: 'Digit must be positive and can have up to 2 decimal places'},
+	}
+);
+
+export const rateInputFormOption = (length: number): RegisterOptions => (
+	{
+		...numberInputFormOption(length),
+		pattern: {
+			value: /^\$?\d+(\.\d{1,2,3})?$/,
+			message: 'Digit must be positive and can have up to 3 decimal places'},
 	}
 );
