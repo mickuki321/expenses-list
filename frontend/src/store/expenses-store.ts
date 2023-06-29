@@ -1,21 +1,26 @@
 import {action, observable, makeObservable} from 'mobx';
-import {type IExpenses} from '../interfaces/expenses';
+import {type IExpense} from '../interfaces/expenses';
 export class ExpensesStore {
 	@observable
-		list: IExpenses[] = [];
+		list: IExpense[] = [];
 
 	constructor() {
 		makeObservable(this);
 	}
 
 	@action
-		addExpenses = (item: IExpenses) => {
+		addExpense = (item: IExpense) => {
 			this.list = [...this.list, item];
 		};
 
 	@action
-	removeData(item: IExpenses) {
-		this.list.splice(this.list.indexOf(item), 1);
-	}
+		removeExpense = (item: IExpense) => {
+			this.list.splice(this.list.indexOf(item), 1);
+		};
+
+	@action
+		editExpense = (itemOld: IExpense, itemNew: IExpense) => {
+			this.list.splice(this.list.indexOf(itemOld), 1, itemNew);
+		};
 }
 

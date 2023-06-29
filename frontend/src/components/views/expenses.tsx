@@ -1,11 +1,13 @@
-import {Flex} from '@chakra-ui/react';
-import {ExpensesList} from '../../components/templates/expenses/expenses-list';
-import {AddExpensesSidebar} from 'src/components/templates/expenses/add-expenses-sidebar';
+import {Flex, Box} from '@chakra-ui/react';
+import {SummaryExpenses, ExpensesList, AddExpensesSidebar} from '../templates';
 
 export const Expenses = () => (
-	<Flex>
+	<Flex w='100%'>
 		<ExpensesList/>
-		<AddExpensesSidebar/>
+		<Box width='400px'>
+			<AddExpensesSidebar/>
+			<SummaryExpenses/>
+		</Box>
 	</Flex>
 
 );

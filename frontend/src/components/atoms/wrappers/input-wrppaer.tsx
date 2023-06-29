@@ -4,14 +4,14 @@ import {type FieldError} from 'react-hook-form';
 
 export interface PropsInputWrapper extends BoxProps {
 	children: JSX.Element;
-	name: string;
+	label: string;
 	error?: FieldError;
 	arg?: any;
 	isRequired?: boolean;
 }
 export const InputWrapper = ({
 	children,
-	name,
+	label,
 	error,
 	isRequired,
 	...arg
@@ -25,7 +25,7 @@ export const InputWrapper = ({
 		{children}
 		<Box className='labelGreen'>
 			<Text display='inline' fontWeight='700'>
-				{name}
+				{label}
 			</Text>
 			{isRequired && (
 				<Text color='red.500' className='labelGreen' display='inline'>

@@ -1,8 +1,10 @@
 import {Expenses} from './components/views';
-import {BodyWrapper} from './components/atoms/wrappers/body-wrapper';
+import {BodyWrapper} from './components/atoms';
+import {Header} from './components/templates/header';
 
 const App = (): JSX.Element => (
 	<BodyWrapper>
+		<Header/>
 		<Expenses/>
 	</BodyWrapper>
 );
