@@ -17,7 +17,7 @@ export const Header = () => {
 			left={0}
 			top={0}
 			w='100vw'
-			px='150px'
+			px={{base: '50px', md: '150px'}}
 			justifyContent='space-between'>
 			<Link href='' fontSize='20px'>Expenses List</Link>
 			<Button onClick={onOpen}>
