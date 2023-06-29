@@ -26,7 +26,7 @@ export const ExpensesList = observer(() => {
 	};
 
 	const genericColumns = (data: IExpense) => ({
-		amountEUR: parseFloat(data.amount) * actualRateEuro,
+		amountEUR: (parseFloat(data.amount) * actualRateEuro).toFixed(2),
 		options:
 			<Flex>
 				<Button variant='info' mr={4} onClick={() => {

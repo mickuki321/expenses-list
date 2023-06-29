@@ -17,7 +17,7 @@ export const SummaryExpenses = observer(() => {
 				{sumAmountPLN}
 			</RecordWrapper>
 			<RecordWrapper label='Sum EUR: '>
-				{sumAmountEUR}
+				{sumAmountEUR.toFixed(2)}
 			</RecordWrapper>
 		</BoxWrapper>
 	);
