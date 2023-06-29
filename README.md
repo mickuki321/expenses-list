@@ -1,3 +1,3 @@
-## Strat project
+## Start project
 
 ### ` docker-compose up --build`
